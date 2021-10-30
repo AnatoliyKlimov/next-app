@@ -4,10 +4,16 @@ import Document, {
   Main,
   NextScript,
   DocumentContext,
+  DocumentInitialProps,
 } from "next/document";
 
 class myDocument extends Document {
-  render() {
+  static async getInitialProps(ctx: DocumentContext): Promise<DocumentInitialProps> {
+    const initialProps = await Document.getInitialProps(ctx);
+    return {...initialProps}
+  }
+
+  render(): JSX.Element {
     return (
       <Html lang="ru">
         <Head />
@@ -19,3 +25,4 @@ class myDocument extends Document {
     );
   }
 }
+ export default myDocument;
