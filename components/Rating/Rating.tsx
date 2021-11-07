@@ -53,7 +53,7 @@ export const Rating = ({ isEditable = false, rating, setRating, ...props }: Rati
             }
             setRating(i);
 
-    }
+    };
 
     return (
         <div {...props}>
